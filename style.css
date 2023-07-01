@@ -129,7 +129,7 @@ body {
     width: 100vw;
 }
 
-#page3>canvas {
+#page3 canvas {
     max-height: 100vh;
     max-width: 100vw;
     position: relative;
@@ -159,4 +159,16 @@ body {
     line-height: 1.3;
     font-weight: normal;
     color: #375ad7;
+}
+
+#page5 {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+#page5 canvas {
+    max-height: 100vh;
+    max-width: 100vw;
+    position: relative;
 }
