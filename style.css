@@ -121,3 +121,14 @@ body {
     font-weight: normal;
     color: #d1cdcd;
 }
+
+#page3{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+#page3>canvas{
+    max-height: 100vh;
+    max-width: 100vw;
+    position: relative;
+}
