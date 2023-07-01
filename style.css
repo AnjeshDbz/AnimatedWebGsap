@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+#main {
+    position: relative;
+    overflow: hidden;
+}
+
+#page1 {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+#page1 video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#page1 nav {
+    position: absolute;
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+
+#page1 nav img {
+    width: 9%;
+    margin-top: -1.7vh;
+}
+
+#right-nav button {
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 1px solid #fff;
+    background-color: #0b48ed;
+    color: #fff;
+    font-size: 16px;
+}
+
+.button-page1 {
+    position: absolute;
+    bottom: 5%;
+    left: 15%;
+    width: 50vw;
+    height: 35vh;
+
+}
+
+.button-page1 h1 {
+    font-size: 5vw;
+    line-height: 1;
+    font-weight: normal;
+    color: #fff;
+}
+
+.button-page1-inner {
+    position: absolute;
+    bottom: 0;
+    height: 35%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 0 30px; */
+}
+
+.button-page1-inner button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 50px;
+    background-color: #fff;
+    color: #0b48ed;
+}
+
+.button-page1-inner h4 {
+    color: #fff;
+    font-size: 1.3vw;
+    font-weight: 400;
+}
+
+#page2 {
+    height: 100vh;
+    width: 100vw;
+    background-color: #0b48ed;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding: 0vw 8vw;
+    color: #fff;
+}
+
+#page2 h2 {
+    font-weight: normal;
+    margin-bottom: 3vh;
+}
+
+#page2 h1 {
+    width: 80%;
+    font-size: 3vw;
+    line-height: 1.3;
+    font-weight: normal;
+    color: #d1cdcd;
+}
