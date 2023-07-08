@@ -511,3 +511,16 @@ body {
 .page14-inner:hover .center14{
     height: 100%;
 }
+
+
+#page12 {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+#page12 canvas {
+    max-height: 100vh;
+    max-width: 100vw;
+    position: relative;
+}

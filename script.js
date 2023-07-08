@@ -669,3 +669,123 @@ gsap.to(".page7-cir-inner", {
 });
 
 // Page 7 Section end
+
+
+
+// Page 5 Section start
+function canvas3() {
+  const canvas = document.querySelector("#page12 canvas");
+  const context = canvas.getContext("2d");
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  window.addEventListener("resize", function () {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    render();
+  });
+
+  function files(index) {
+    var data = `
+./images/c3dImg/ezgif-frame-001.jpg
+./images/c3dImg/ezgif-frame-002.jpg
+./images/c3dImg/ezgif-frame-003.jpg
+./images/c3dImg/ezgif-frame-004.jpg
+./images/c3dImg/ezgif-frame-005.jpg
+./images/c3dImg/ezgif-frame-006.jpg
+./images/c3dImg/ezgif-frame-007.jpg
+./images/c3dImg/ezgif-frame-008.jpg
+./images/c3dImg/ezgif-frame-009.jpg
+./images/c3dImg/ezgif-frame-010.jpg
+./images/c3dImg/ezgif-frame-011.jpg
+./images/c3dImg/ezgif-frame-012.jpg
+./images/c3dImg/ezgif-frame-013.jpg
+./images/c3dImg/ezgif-frame-014.jpg
+./images/c3dImg/ezgif-frame-015.jpg
+./images/c3dImg/ezgif-frame-016.jpg
+./images/c3dImg/ezgif-frame-017.jpg
+./images/c3dImg/ezgif-frame-018.jpg
+./images/c3dImg/ezgif-frame-019.jpg
+./images/c3dImg/ezgif-frame-020.jpg
+./images/c3dImg/ezgif-frame-021.jpg
+./images/c3dImg/ezgif-frame-022.jpg
+./images/c3dImg/ezgif-frame-023.jpg
+./images/c3dImg/ezgif-frame-024.jpg
+./images/c3dImg/ezgif-frame-025.jpg
+./images/c3dImg/ezgif-frame-026.jpg
+./images/c3dImg/ezgif-frame-027.jpg
+./images/c3dImg/ezgif-frame-028.jpg
+./images/c3dImg/ezgif-frame-029.jpg
+./images/c3dImg/ezgif-frame-030.jpg
+./images/c3dImg/ezgif-frame-031.jpg
+./images/c3dImg/ezgif-frame-032.jpg
+
+`;
+    return data.split("\n")[index];
+  }
+
+  const frameCount = 32;
+
+  const images = [];
+  const imageSeq = {
+    frame: 1,
+  };
+
+  for (let i = 0; i < frameCount; i++) {
+    const img = new Image();
+    img.src = files(i);
+    images.push(img);
+  }
+
+  gsap.to(imageSeq, {
+    frame: frameCount - 1,
+    snap: "frame",
+    ease: `none`,
+    scrollTrigger: {
+      scrub: 0.5,
+      trigger: `#page12`,
+      start: `top top`,
+      end: `250% top`,
+      scroller: `#main`,
+    },
+    onUpdate: render,
+  });
+
+  images[1].onload = render;
+
+  function render() {
+    scaleImage(images[imageSeq.frame], context);
+  }
+
+  function scaleImage(img, ctx) {
+    var canvas = ctx.canvas;
+    var hRatio = canvas.width / img.width;
+    var vRatio = canvas.height / img.height;
+    var ratio = Math.max(hRatio, vRatio);
+    var centerShift_x = (canvas.width - img.width * ratio) / 2;
+    var centerShift_y = (canvas.height - img.height * ratio) / 2;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(
+      img,
+      0,
+      0,
+      img.width,
+      img.height,
+      centerShift_x,
+      centerShift_y,
+      img.width * ratio,
+      img.height * ratio
+    );
+  }
+  ScrollTrigger.create({
+    trigger: "#page12",
+    pin: true,
+    scroller: `#main`,
+    start: `top top`,
+    end: `250% top`,
+  });
+}
+canvas3();
+
+// Page 12 Section end
